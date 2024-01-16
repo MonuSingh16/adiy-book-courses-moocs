@@ -91,8 +91,11 @@ def _split_data(df):
     Splits the data into three sets: train, validation and test.
     """
 
-    df_train, temp = train_test_split(df, test_size=0.3, stratify=df["species"])
-    df_validation, df_test = train_test_split(temp, test_size=0.5, stratify=temp["species"])
+    #df_train, temp = train_test_split(df, test_size=0.3, stratify=df["species"])
+    #df_validation, df_test = train_test_split(temp, test_size=0.5, stratify=temp["species"])
+
+    df_train, temp = train_test_split(df, test_size=0.3)
+    df_validation, df_test = train_test_split(temp, test_size=0.5)
 
     return df_train, df_validation, df_test
 
